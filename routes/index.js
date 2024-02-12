@@ -2,9 +2,9 @@
 import { Express }  from 'express';
 import AppController from '../controllers/AppController';
 import UsersController from '../controllers/UsersController';
-/* import AuthController from '../controllers/AuthController.js';
-import FilesController from '../controllers/FilesController.js';
-import { basicAuthenticate, xTokenAuthenticate } from '../middlewares/auth.js';
+import AuthController from '../controllers/AuthController';
+import { basicAuthenticate, xTokenAuthenticate } from '../middlewares/auth';
+/* import FilesController from '../controllers/FilesController.js';
 import { APIError, errorResponse } from '../middlewares/error.js'; */
 
 
@@ -18,13 +18,10 @@ const injectRoutes = (api) => {
 
   api.post('/users', UsersController.postNew);
 
-  /*
   api.get('/connect', basicAuthenticate, AuthController.getConnect);
   api.get('/disconnect', xTokenAuthenticate, AuthController.getDisconnect);
-
-
   api.get('/users/me', xTokenAuthenticate, UsersController.getMe);
-
+/*
   api.post('/files', xTokenAuthenticate, FilesController.postUpload);
   api.get('/files/:id', xTokenAuthenticate, FilesController.getShow);
   api.get('/files', xTokenAuthenticate, FilesController.getIndex);
