@@ -5,7 +5,7 @@ import UsersController from '../controllers/UsersController';
 import AuthController from '../controllers/AuthController';
 import { basicAuthenticate, xTokenAuthenticate } from '../middlewares/auth';
 import FilesController from '../controllers/FilesController.js';
-/*import { APIError, errorResponse } from '../middlewares/error.js'; */
+import { APIError, errorResponse } from '../middlewares/error.js';
 
 
 /**
@@ -30,10 +30,10 @@ const injectRoutes = (api) => {
   api.put('/files/:id/unpublish', xTokenAuthenticate, FilesController.putUnpublish);
   api.get('/files/:id/data', FilesController.getFile);
 
-  /* api.all('*', (req, res, next) => {
+  api.all('*', (req, res, next) => {
     errorResponse(new APIError(404, `Cannot ${req.method} ${req.url}`), req, res, next);
   });
-  api.use(errorResponse); */
+  api.use(errorResponse);
 };
 
 export default injectRoutes;
