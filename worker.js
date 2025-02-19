@@ -66,10 +66,10 @@ userQueue.process(async (job, done) => {
     const mailContent = [
       '<div>',
       '<h3>Hello {{user.name}},</h3>',
-      'Welcome to <a href="https://github.com/Emmanuella/alx-files_manager">',
+      'Welcome to <a href="https://github.com/ch3lla/alx-files_manager">',
       'ALX-Files_Manager</a>, ',
       'a simple file management API built with Node.js by ',
-      '<a href="https://github.com/Emmanuella">Emmanuella Chukwuma</a>. ',
+      '<a href="https://github.com/ch3lla">Emmanuella Chukwuma</a>. ',
       'We hope it meets your needs.',
       '</div>',
     ].join('');
